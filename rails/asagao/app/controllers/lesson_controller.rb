@@ -63,4 +63,36 @@ class LessonController < ApplicationController
   def step11
     @comment = "<strong>安全なHTML</strong>"
   end
+
+  # 書式の基礎
+  def step12
+    @population = 19999
+    @surface = 111.22
+  end
+
+  # 時間の書式化
+  def step13
+    @time = Time.now
+  end
+
+  # 数値をカンマ区切りで
+  def step14
+    @population = 123_456_789
+  end
+
+  # ヘルパーモジュール使う
+  def step15
+    @message = "一行目改行コード\n２行目"
+  end
+
+  # 条件分岐
+  def step18
+    @zaiko = 10
+  end
+
+  # 繰り返し
+  def step19
+    @items = {"フライパン" => 100, "ワイングラス" => 200,
+              "スプーン" => 300, "フォーク" => 400}
+  end
 end
