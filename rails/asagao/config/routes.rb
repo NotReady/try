@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # /aboutのアクセス⇒ TopController.aboutの関連と、abount_pathメソッド⇒/aboutパスの取得
   get "about" => "top#about", as: "about" 
 
+  # lesson/アクション名LessonControllerの全てのアクションを呼び出す。:nameパラメターを添付
+  get "lesson/:action(/:name)" => "lesson"
 end
