@@ -41,4 +41,26 @@ class LessonController < ApplicationController
   def set_message
     @message = "こんにちは"
   end
+
+  # テンプレートの基礎
+  public 
+  def step8
+    @price = (2_000*1.05).floor
+  end
+  
+  # 異なるアクションのテンプレートでレンダリング
+  def step9
+    @price = 1_000
+    render "step8"
+  end
+
+  # クロスサイトスクリプティングの基礎
+  def step10
+    @comment = "<script>alert('危険')</script>こんにちは。"
+  end
+
+  # クロスサイトスクリプティングの基礎
+  def step11
+    @comment = "<strong>安全なHTML</strong>"
+  end
 end
