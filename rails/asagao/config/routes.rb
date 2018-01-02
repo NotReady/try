@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
   # lesson/アクション名LessonControllerの全てのアクションを呼び出す。:nameパラメターを添付
   get "lesson/:action(/:name)" => "lesson"
+
+  # リソースベースのルーティング
+  resources :members do
+    collection { get "search" }
+  end
 end
