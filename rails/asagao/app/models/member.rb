@@ -18,7 +18,8 @@ class Member < ActiveRecord::Base
       presence: true,			#=> 空文字の禁止
     format: {
       with: /\A[A-Za-z]\w*\z/,		#=> 半角英数のみ
-      allow_blank: true},		#=> 空文字禁止
+      allow_blank: true,                #=> 空文字禁止
+      message: :invalid_member_name},	#=> エラーメッセージ 
     length: {
       minimum: 2,			#=> 2文字以上
       maximum: 20,			#=> 20文字以下
