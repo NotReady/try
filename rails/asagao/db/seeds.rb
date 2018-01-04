@@ -1,5 +1,5 @@
 # db/seeds/development　にテーブル名.rbがあれば実行する
-table_names = %w(members)
+table_names = %w(members articles)
 table_names.each do |table_name|
 	path = Rails.root.join("db/seeds", Rails.env, table_name + ".rb")
 	if File.exist?(path)
