@@ -4,6 +4,11 @@ class Article < ActiveRecord::Base
   validate :check_expired_at
   before_validation :clear_expired_at
 
+  # スコープの実装　掲載日時が有効
+  scope :open, -> {
+    now = Time.current
+    where("released_at <= ? AND ( ? < expired_at or expired_at is null )", now, now) }
+
   def no_expiration
     expired_at.blank?
   end
@@ -21,5 +26,12 @@ class Article < ActiveRecord::Base
 
   def clear_expired_at
     self.expired_at = nil if @no_expiration
+  end
+
+  public
+  class << self
+    def sidebar_articles( num = 5 )
+      open.order(released_at: :desc).limit(num)
+    end
   end
 end
