@@ -1,1 +1,7 @@
-<p>chapter3controller#index</p>
+<ul>
+<% @countries.each do |c| %>
+  <li><%= c %></li>
+<% end %>
+</ul>
+
+<%= link_to "top", top_path %>
