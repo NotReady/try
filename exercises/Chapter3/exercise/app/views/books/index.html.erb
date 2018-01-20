@@ -1,2 +1,7 @@
 <h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<p>Bookモデルのレコード一覧</p>
+<% @books.each do |book| %>
+  <ul>
+    <li><%= link_to book.title, book_path(book) %></li>
+  </ul>
+<% end %>
